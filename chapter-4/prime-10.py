@@ -3,7 +3,7 @@ from concurrent.futures import ProcessPoolExecutor
 import time
 
 
-N = 6
+N = 4
 
 
 def timeit(func):
@@ -47,9 +47,6 @@ def parallel_processing(nth):
     with ProcessPoolExecutor() as executor:
         results = executor.map(nth_prime, range(nth, nth + N))
         return list(results)
-    # with ThreadPoolExecutor(max_workers=N) as executor:
-    #     results = executor.map(nth_prime, range(nth, nth + N))
-    #     return list(results)
 
 
 @timeit
@@ -59,5 +56,5 @@ def serial_processing(nth):
 
 if __name__ == "__main__":
     nth = 90_000
-    # serial_processing(nth)
+    serial_processing(nth)
     parallel_processing(nth)

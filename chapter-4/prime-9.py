@@ -39,5 +39,4 @@ def nth_prime(n):
 
 
 if __name__ == "__main__":
-    # is_prime("4")
-    nth_prime(10000)
+    nth_prime(90_000)
